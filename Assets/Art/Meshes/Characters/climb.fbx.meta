@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: f477368eaf09327439cdbb8df52a66d5
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Direction_ctrl
+    100004: Movement_ctrl
+    100006: TeddyBearBear_Climb:Bear
+    100008: TeddyBearBear_Climb:BearMayaMode2l:R_Finger
+    100010: TeddyBearBear_Climb:Core
+    100012: TeddyBearBear_Climb:Core_Ctrl
+    100014: TeddyBearBear_Climb:Head
+    100016: TeddyBearBear_Climb:Head2
+    100018: TeddyBearBear_Climb:L_Ear1
+    100020: TeddyBearBear_Climb:L_Ear2
+    100022: TeddyBearBear_Climb:L_Elbow
+    100024: TeddyBearBear_Climb:L_Eyebrow1
+    100026: TeddyBearBear_Climb:L_Eyebrow2
+    100028: TeddyBearBear_Climb:L_Eyebrow3
+    100030: TeddyBearBear_Climb:L_Finger
+    100032: TeddyBearBear_Climb:L_Hand
+    100034: TeddyBearBear_Climb:L_Knee
+    100036: TeddyBearBear_Climb:L_Leg
+    100038: TeddyBearBear_Climb:L_Shoulder
+    100040: TeddyBearBear_Climb:L_Thigh
+    100042: TeddyBearBear_Climb:L_Toe
+    100044: TeddyBearBear_Climb:Moustache
+    100046: TeddyBearBear_Climb:Neck1
+    100048: TeddyBearBear_Climb:Neck2
+    100050: TeddyBearBear_Climb:Overall_Ctrl
+    100052: TeddyBearBear_Climb:R_Ear1
+    100054: TeddyBearBear_Climb:R_Ear2
+    100056: TeddyBearBear_Climb:R_Elbow
+    100058: TeddyBearBear_Climb:R_Eyebrow1
+    100060: TeddyBearBear_Climb:R_Eyebrow2
+    100062: TeddyBearBear_Climb:R_Eyebrow3
+    100064: TeddyBearBear_Climb:R_Hand
+    100066: TeddyBearBear_Climb:R_Knee
+    100068: TeddyBearBear_Climb:R_Leg
+    100070: TeddyBearBear_Climb:R_Shoulder
+    100072: TeddyBearBear_Climb:R_Thigh
+    100074: TeddyBearBear_Climb:R_Toe
+    100076: TeddyBearBear_Climb:Spine1
+    100078: TeddyBearBear_Climb:Spine2
+    100080: TeddyBearBear_Climb:Tail1
+    100082: TeddyBearBear_Climb:Tail2
+    400000: //RootNode
+    400002: Direction_ctrl
+    400004: Movement_ctrl
+    400006: TeddyBearBear_Climb:Bear
+    400008: TeddyBearBear_Climb:BearMayaMode2l:R_Finger
+    400010: TeddyBearBear_Climb:Core
+    400012: TeddyBearBear_Climb:Core_Ctrl
+    400014: TeddyBearBear_Climb:Head
+    400016: TeddyBearBear_Climb:Head2
+    400018: TeddyBearBear_Climb:L_Ear1
+    400020: TeddyBearBear_Climb:L_Ear2
+    400022: TeddyBearBear_Climb:L_Elbow
+    400024: TeddyBearBear_Climb:L_Eyebrow1
+    400026: TeddyBearBear_Climb:L_Eyebrow2
+    400028: TeddyBearBear_Climb:L_Eyebrow3
+    400030: TeddyBearBear_Climb:L_Finger
+    400032: TeddyBearBear_Climb:L_Hand
+    400034: TeddyBearBear_Climb:L_Knee
+    400036: TeddyBearBear_Climb:L_Leg
+    400038: TeddyBearBear_Climb:L_Shoulder
+    400040: TeddyBearBear_Climb:L_Thigh
+    400042: TeddyBearBear_Climb:L_Toe
+    400044: TeddyBearBear_Climb:Moustache
+    400046: TeddyBearBear_Climb:Neck1
+    400048: TeddyBearBear_Climb:Neck2
+    400050: TeddyBearBear_Climb:Overall_Ctrl
+    400052: TeddyBearBear_Climb:R_Ear1
+    400054: TeddyBearBear_Climb:R_Ear2
+    400056: TeddyBearBear_Climb:R_Elbow
+    400058: TeddyBearBear_Climb:R_Eyebrow1
+    400060: TeddyBearBear_Climb:R_Eyebrow2
+    400062: TeddyBearBear_Climb:R_Eyebrow3
+    400064: TeddyBearBear_Climb:R_Hand
+    400066: TeddyBearBear_Climb:R_Knee
+    400068: TeddyBearBear_Climb:R_Leg
+    400070: TeddyBearBear_Climb:R_Shoulder
+    400072: TeddyBearBear_Climb:R_Thigh
+    400074: TeddyBearBear_Climb:R_Toe
+    400076: TeddyBearBear_Climb:Spine1
+    400078: TeddyBearBear_Climb:Spine2
+    400080: TeddyBearBear_Climb:Tail1
+    400082: TeddyBearBear_Climb:Tail2
+    4300000: TeddyBearBear_Climb:Bear
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: TeddyBearBear_Climb:Bear
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
