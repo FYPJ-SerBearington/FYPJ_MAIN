@@ -13,6 +13,7 @@ public class Boss_Controller : MonoBehaviour
 		ATTACKING,
 		THROWING,
 		SPECIAL,
+		STUN,
 		DEAD
 	}
 	public int BossHp =100;

@@ -19,7 +19,7 @@ public class BaseStat{
 	/// </summary>
 	//Default constructor
 	public BaseStat(){
-		UnityEngine.Debug.Log ("Base Stat Created");
+		//UnityEngine.Debug.Log ("Base Stat Created");
 		_baseValue = 0;
 		_buffValue = 0;
 		_levelModifer = 1.1f;

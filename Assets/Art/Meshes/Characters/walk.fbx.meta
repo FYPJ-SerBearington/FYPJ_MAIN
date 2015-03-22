@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 9071dd352c41e074a946c24e6fe3dd37
 ModelImporter:
-  serializedVersion: 16
+  serializedVersion: 18
   fileIDToRecycleName:
     100000: Direction_ctrl
     100002: Movement_ctrl
@@ -106,7 +106,117 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Direction_ctrl
+        weight: 1
+      - path: Direction_ctrl/Movement_ctrl
+        weight: 1
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:L_Thigh
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:L_Thigh/TeddyBearBear_Walk:L_Knee
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:L_Thigh/TeddyBearBear_Walk:L_Knee/TeddyBearBear_Walk:L_Leg
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:L_Thigh/TeddyBearBear_Walk:L_Knee/TeddyBearBear_Walk:L_Leg/TeddyBearBear_Walk:L_Toe
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:R_Thigh
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:R_Thigh/TeddyBearBear_Walk:R_Knee
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:R_Thigh/TeddyBearBear_Walk:R_Knee/TeddyBearBear_Walk:R_Leg
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:R_Thigh/TeddyBearBear_Walk:R_Knee/TeddyBearBear_Walk:R_Leg/TeddyBearBear_Walk:R_Toe
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:L_Shoulder
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:L_Shoulder/TeddyBearBear_Walk:L_Elbow
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:L_Shoulder/TeddyBearBear_Walk:L_Elbow/TeddyBearBear_Walk:L_Hand
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:L_Shoulder/TeddyBearBear_Walk:L_Elbow/TeddyBearBear_Walk:L_Hand/TeddyBearBear_Walk:L_Finger
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:Neck1
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:Neck1/TeddyBearBear_Walk:Neck2
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:Neck1/TeddyBearBear_Walk:Neck2/TeddyBearBear_Walk:Head
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:Neck1/TeddyBearBear_Walk:Neck2/TeddyBearBear_Walk:Head/TeddyBearBear_Walk:Head2
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:Neck1/TeddyBearBear_Walk:Neck2/TeddyBearBear_Walk:Head/TeddyBearBear_Walk:L_Ear1
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:Neck1/TeddyBearBear_Walk:Neck2/TeddyBearBear_Walk:Head/TeddyBearBear_Walk:L_Ear1/TeddyBearBear_Walk:L_Ear2
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:Neck1/TeddyBearBear_Walk:Neck2/TeddyBearBear_Walk:Head/TeddyBearBear_Walk:L_Eyebrow1
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:Neck1/TeddyBearBear_Walk:Neck2/TeddyBearBear_Walk:Head/TeddyBearBear_Walk:L_Eyebrow2
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:Neck1/TeddyBearBear_Walk:Neck2/TeddyBearBear_Walk:Head/TeddyBearBear_Walk:L_Eyebrow3
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:Neck1/TeddyBearBear_Walk:Neck2/TeddyBearBear_Walk:Head/TeddyBearBear_Walk:Moustache
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:Neck1/TeddyBearBear_Walk:Neck2/TeddyBearBear_Walk:Head/TeddyBearBear_Walk:R_Ear1
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:Neck1/TeddyBearBear_Walk:Neck2/TeddyBearBear_Walk:Head/TeddyBearBear_Walk:R_Ear1/TeddyBearBear_Walk:R_Ear2
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:Neck1/TeddyBearBear_Walk:Neck2/TeddyBearBear_Walk:Head/TeddyBearBear_Walk:R_Eyebrow1
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:Neck1/TeddyBearBear_Walk:Neck2/TeddyBearBear_Walk:Head/TeddyBearBear_Walk:R_Eyebrow2
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:Neck1/TeddyBearBear_Walk:Neck2/TeddyBearBear_Walk:Head/TeddyBearBear_Walk:R_Eyebrow3
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:R_Shoulder
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:R_Shoulder/TeddyBearBear_Walk:R_Elbow
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:R_Shoulder/TeddyBearBear_Walk:R_Elbow/TeddyBearBear_Walk:R_Hand
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Spine1/TeddyBearBear_Walk:Spine2/TeddyBearBear_Walk:R_Shoulder/TeddyBearBear_Walk:R_Elbow/TeddyBearBear_Walk:R_Hand/TeddyBearBear_Walk:BearMayaMode2l:R_Finger
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Tail1
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core/TeddyBearBear_Walk:Tail1/TeddyBearBear_Walk:Tail2
+        weight: 0
+      - path: Direction_ctrl/Movement_ctrl/TeddyBearBear_Walk:Overall_Ctrl/TeddyBearBear_Walk:Core_Ctrl
+        weight: 0
+      - path: TeddyBearBear_Walk:Bear
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -118,11 +228,13 @@ ModelImporter:
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
+    keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
@@ -145,3 +257,5 @@ ModelImporter:
   animationType: 2
   additionalBone: 0
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

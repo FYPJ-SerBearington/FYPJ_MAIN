@@ -8,23 +8,24 @@ public class CharacterHeadMovement : MonoBehaviour {
 	private Transform _myTransform;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start ()
+	{
 		_myTransform = headTransform;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 
 	}
-	void LateUpdate(){
+	void LateUpdate()
+	{
 		if (GUIUtility.hotControl == 0)
 		{
 			if (Input.GetMouseButton(0) || Input.GetMouseButton(1)) 
 			{ 
 				_myTransform.Rotate(new Vector3(-Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"), 0) * speed);
-			} 
-			 
+			}
 		}
 	}
 }

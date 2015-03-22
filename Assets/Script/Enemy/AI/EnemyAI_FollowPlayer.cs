@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class EnemyAI_FollowPlayer : MonoBehaviour {
-	private Transform _target; // Enemy Target which is players
+	public Transform _target; // Enemy Target which is players
 	public int moveSpeed;
 	public int rotationSpeed;
 	public int maxDistance; // The Maximun Distance enemy is away from player before enemy starts moving towards players
@@ -19,7 +19,7 @@ public class EnemyAI_FollowPlayer : MonoBehaviour {
 
 		_target = go.transform;
 
-		maxDistance = 2;
+		maxDistance = 0;
 	}
 	
 	// Update is called once per frame
@@ -34,5 +34,7 @@ public class EnemyAI_FollowPlayer : MonoBehaviour {
 			// Move towards target. Moving forward in our space
 			_myTransform.position += _myTransform.forward * moveSpeed * Time.deltaTime;
 		}
+
+
 	}
 }

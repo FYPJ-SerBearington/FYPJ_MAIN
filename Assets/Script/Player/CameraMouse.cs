@@ -30,6 +30,7 @@ public class CameraMouse : MonoBehaviour {
 
 	
 	void  Start (){ 
+		target = GameObject.FindGameObjectWithTag ("Player").transform;
 		Vector3 angles = transform.eulerAngles; 
 		_xDeg = angles.x; 
 		_yDeg = angles.y; 
