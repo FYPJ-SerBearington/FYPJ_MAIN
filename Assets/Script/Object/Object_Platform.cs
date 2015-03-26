@@ -17,8 +17,8 @@ public class Object_Platform : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		min = 6.0f;
-		max = 3.0f;
+		min = this.transform.position.x;
+		max = this.transform.position.x + 3.0f;
 		t = 0;
 		checker = 0;
 		Cstate = (int)checker;
@@ -26,7 +26,6 @@ public class Object_Platform : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-
 		switch(Cstate)
 		{
 			case (int)state.IN:
@@ -34,9 +33,9 @@ public class Object_Platform : MonoBehaviour
 				t+=Time.deltaTime;
 				if(t>1.0f)
 				{
-					this.transform.Translate(-Time.deltaTime,0,0);
+					this.transform.Translate(Time.deltaTime,0,0);
 				}
-				if(this.transform.position.x <= max)
+				if(this.transform.position.x >= max)
 				{
 					t = 0;
 					this.transform.position.Set (max,this.transform.position.y,this.transform.position.z);
@@ -48,9 +47,9 @@ public class Object_Platform : MonoBehaviour
 				t+=Time.deltaTime;
 				if(t>1.0f)
 				{
-					this.transform.Translate(Time.deltaTime,0,0);
+					this.transform.Translate(-Time.deltaTime,0,0);
 				}
-				if(this.transform.position.x >= min)
+				if(this.transform.position.x <=min)
 				{
 					t=0;
 					this.transform.position.Set (min,this.transform.position.y,this.transform.position.z);

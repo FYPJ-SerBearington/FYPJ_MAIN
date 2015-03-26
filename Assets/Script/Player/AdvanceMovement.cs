@@ -122,8 +122,8 @@ public class AdvanceMovement : MonoBehaviour
 		
 		_anim.Stop ();
 		_anim.wrapMode = WrapMode.Loop;
-//		_anim ["jump"].layer = 1; // more weight to use for jump animation. The heigher the layer the more weight used for that animation compare to the one that's lower that it.  
-//		_anim ["jump"].wrapMode = WrapMode.Once; //we do not want to jump animation in the air to be looping
+		_anim ["jump"].layer = 1; // more weight to use for jump animation. The heigher the layer the more weight used for that animation compare to the one that's lower that it.  
+		_anim ["jump"].wrapMode = WrapMode.Once; //we do not want to jump animation in the air to be looping
 
 		//_anim.Play ("Idle");				//start the idle animation when the script starts
 
@@ -236,6 +236,7 @@ public class AdvanceMovement : MonoBehaviour
 	}
 	public void Walk()
 	{
+		//_anim["walk"].speed = 1.5f;
 		_anim.CrossFade("walk");
 	}
 	public void Strafe()
@@ -244,15 +245,20 @@ public class AdvanceMovement : MonoBehaviour
 	}
 	public void Run()
 	{
-		_anim["run"].speed = 1.5f;
+		_anim["run"].speed = 3.5f;
 		_anim.CrossFade("run");
 	}
 	public void Jump()
 	{
+		_anim["jump"].speed = 2.0f;
 		_anim.CrossFade("jump");
 	}
 	public void Fall()
 	{
 		//_anim.CrossFade("Fall");
+	}
+	public void Rotate(){
+		_anim["strafe"].speed = 5.5f;
+		_anim.CrossFade("strafe");
 	}
 }

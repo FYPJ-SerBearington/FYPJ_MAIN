@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Toggle : MonoBehaviour {
 	public GameObject Switch;
+	public GameObject Switch2;
 	public bool NextToTheSwitch;
 
 	// Use this for initialization
@@ -18,6 +19,13 @@ public class Toggle : MonoBehaviour {
 			}
 			else{
 				Switch.GetComponent<Light>().enabled = true;
+			}
+
+			if(Switch2.GetComponent<Light>().enabled){
+				Switch2.GetComponent<Light>().enabled = false;
+			}
+			else{
+				Switch2.GetComponent<Light>().enabled = true;
 			}
 		}
 	}
