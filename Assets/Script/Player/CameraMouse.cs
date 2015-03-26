@@ -30,7 +30,7 @@ public class CameraMouse : MonoBehaviour {
 
 	
 	void  Start (){ 
-		target = GameObject.FindGameObjectWithTag ("Player").transform;
+		target = GameObject.FindGameObjectWithTag ("Player").transform.FindChild("head").transform;
 		Vector3 angles = transform.eulerAngles; 
 		_xDeg = angles.x; 
 		_yDeg = angles.y; 
@@ -95,20 +95,20 @@ public class CameraMouse : MonoBehaviour {
 
 
 		// Check for collision using the true target's desired registration point as set by user using height 
-				RaycastHit collisionHit; 
-				Vector3 trueTargetPosition =new Vector3 (target.position.x, target.position.y + targetHeight, target.position.z); 
+		RaycastHit collisionHit; 
+		Vector3 trueTargetPosition =new Vector3 (target.position.x, target.position.y + targetHeight, target.position.z); 
 				
 				// If there was a collision, correct the camera position and calculate the corrected distance 
 		bool isCorrected= false; 
-				if (Physics.Linecast (trueTargetPosition, position,out collisionHit, collisionLayers)) 
-				{ 
-					// Calculate the distance from the original estimated position to the collision location,
-					// subtracting out a safety "offset" distance from the object we hit.  The offset will help
-					// keep the camera from being right on top of the surface we hit, which usually shows up as
-					// the surface geometry getting partially clipped by the camera's front clipping plane.
-					_correctedDistance = Vector3.Distance (trueTargetPosition, collisionHit.point) - offsetFromWall; 
-					isCorrected = true;
-				}
+		if (Physics.Linecast (trueTargetPosition, position,out collisionHit, collisionLayers)) 
+		{ 
+			// Calculate the distance from the original estimated position to the collision location,
+			// subtracting out a safety "offset" distance from the object we hit.  The offset will help
+			// keep the camera from being right on top of the surface we hit, which usually shows up as
+			// the surface geometry getting partially clipped by the camera's front clipping plane.
+			_correctedDistance = Vector3.Distance (trueTargetPosition, collisionHit.point) - offsetFromWall; 
+			isCorrected = true;
+		}
 		
 		// For smoothing, lerp distance only if either distance wasn't corrected, or correctedDistance is more than currentDistance (TernaryOperator)
 		_currentDistance = !isCorrected || _correctedDistance > _currentDistance ? Mathf.Lerp (_currentDistance, _correctedDistance, Time.deltaTime * zoomDampening) : _correctedDistance; 

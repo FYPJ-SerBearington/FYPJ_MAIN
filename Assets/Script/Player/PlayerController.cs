@@ -1,9 +1,8 @@
-﻿// Converted from UnityScript to C# at http://www.M2H.nl/files/js_to_c.php - by Mike Hergaarden
-// Do test the code! You usually need to change a few small bits.
-
+﻿
 using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
 	public float jumpSpeed = 15.0f;
@@ -78,8 +77,8 @@ public class PlayerController : MonoBehaviour
 			
 			
 			// Toggle walking/running with the T key
-			//if(Input.GetKeyDown("t"))
-			//isWalking = !isWalking;
+			if(Input.GetKeyDown("t"))
+			isWalking = !isWalking;
 			
 			
 			
@@ -103,8 +102,8 @@ public class PlayerController : MonoBehaviour
 			//Cursor.visible = false; 
 			
 			
-			//FIXME_VAR_TYPE mouse1= Input.mousePosition.y;
-			//FIXME_VAR_TYPE mouse2= Input.mousePosition.x;
+			//float mouse1= Input.mousePosition.y;
+			//float mouse2= Input.mousePosition.x;
 			
 		}
 		
@@ -122,6 +121,4 @@ public class PlayerController : MonoBehaviour
 		
 		
 	}
-	
-	//@script RequireComponent(CharacterController)
 }

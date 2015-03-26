@@ -1,0 +1,497 @@
+fileFormatVersion: 2
+guid: cb9f878132a257b43b7fd7b066c4f895
+timeCreated: 1427276678
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Bear_model
+    100004: Body_joint
+    100006: Ear_joint
+    100008: Ear_tip_joint
+    100010: Head_joint
+    100012: joint14
+    100014: L_clavis_joint
+    100016: L_elbow_joint
+    100018: L_foot_joint
+    100020: L_hip_joint
+    100022: L_knee_joint
+    100024: L_left_brow_joint
+    100026: L_middle_brow_joint
+    100028: L_paw_joint
+    100030: L_right_brow_joint
+    100032: L_shoulder_joint
+    100034: Master_joint
+    100036: Neck_joint
+    100038: nurbsCircle1
+    100040: nurbsCircle20
+    100042: R_clavis_joint
+    100044: R_elbow_joint
+    100046: R_foot_joint
+    100048: R_hip_joint
+    100050: R_knee_joint
+    100052: R_left_brow_joint
+    100054: R_middle_brow_joint
+    100056: R_paw_joint
+    100058: R_right_brow_joint
+    100060: R_shoulder_joint
+    100062: Tail_joint
+    400000: //RootNode
+    400002: Bear_model
+    400004: Body_joint
+    400006: Ear_joint
+    400008: Ear_tip_joint
+    400010: Head_joint
+    400012: joint14
+    400014: L_clavis_joint
+    400016: L_elbow_joint
+    400018: L_foot_joint
+    400020: L_hip_joint
+    400022: L_knee_joint
+    400024: L_left_brow_joint
+    400026: L_middle_brow_joint
+    400028: L_paw_joint
+    400030: L_right_brow_joint
+    400032: L_shoulder_joint
+    400034: Master_joint
+    400036: Neck_joint
+    400038: nurbsCircle1
+    400040: nurbsCircle20
+    400042: R_clavis_joint
+    400044: R_elbow_joint
+    400046: R_foot_joint
+    400048: R_hip_joint
+    400050: R_knee_joint
+    400052: R_left_brow_joint
+    400054: R_middle_brow_joint
+    400056: R_paw_joint
+    400058: R_right_brow_joint
+    400060: R_shoulder_joint
+    400062: Tail_joint
+    4300000: Bear_model
+    7400000: walk
+    7400002: jump
+    7400004: strafe
+    7400006: run
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Bear_model
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 1
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: walk
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bear_model
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle20
+        weight: 1
+      - path: nurbsCircle20/Master_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/joint14
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/Ear_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/Ear_joint/Ear_tip_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/L_left_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/L_middle_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/L_right_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/R_left_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/R_middle_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/R_right_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/L_clavis_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/L_clavis_joint/L_shoulder_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/L_clavis_joint/L_shoulder_joint/L_elbow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/L_clavis_joint/L_shoulder_joint/L_elbow_joint/L_paw_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/R_clavis_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/R_clavis_joint/R_shoulder_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/R_clavis_joint/R_shoulder_joint/R_elbow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/R_clavis_joint/R_shoulder_joint/R_elbow_joint/R_paw_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/L_hip_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/L_hip_joint/L_knee_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/L_hip_joint/L_knee_joint/L_foot_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Tail_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/R_hip_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/R_hip_joint/R_knee_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/R_hip_joint/R_knee_joint/R_foot_joint
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: jump
+      takeName: Take 001
+      firstFrame: 40
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bear_model
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle20
+        weight: 1
+      - path: nurbsCircle20/Master_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/L_clavis_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/L_clavis_joint/L_shoulder_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/L_clavis_joint/L_shoulder_joint/L_elbow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/L_clavis_joint/L_shoulder_joint/L_elbow_joint/L_paw_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/Ear_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/Ear_joint/Ear_tip_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/joint14
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/L_left_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/L_middle_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/L_right_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/R_left_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/R_middle_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/R_right_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/R_clavis_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/R_clavis_joint/R_shoulder_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/R_clavis_joint/R_shoulder_joint/R_elbow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/R_clavis_joint/R_shoulder_joint/R_elbow_joint/R_paw_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/L_hip_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/L_hip_joint/L_knee_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/L_hip_joint/L_knee_joint/L_foot_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/R_hip_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/R_hip_joint/R_knee_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/R_hip_joint/R_knee_joint/R_foot_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Tail_joint
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: strafe
+      takeName: Take 001
+      firstFrame: 100
+      lastFrame: 130
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bear_model
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle20
+        weight: 1
+      - path: nurbsCircle20/Master_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/L_clavis_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/L_clavis_joint/L_shoulder_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/L_clavis_joint/L_shoulder_joint/L_elbow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/L_clavis_joint/L_shoulder_joint/L_elbow_joint/L_paw_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/Ear_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/Ear_joint/Ear_tip_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/joint14
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/L_left_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/L_middle_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/L_right_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/R_left_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/R_middle_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/R_right_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/R_clavis_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/R_clavis_joint/R_shoulder_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/R_clavis_joint/R_shoulder_joint/R_elbow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/R_clavis_joint/R_shoulder_joint/R_elbow_joint/R_paw_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/L_hip_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/L_hip_joint/L_knee_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/L_hip_joint/L_knee_joint/L_foot_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/R_hip_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/R_hip_joint/R_knee_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/R_hip_joint/R_knee_joint/R_foot_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Tail_joint
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: run
+      takeName: Take 001
+      firstFrame: 175
+      lastFrame: 197
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bear_model
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle20
+        weight: 1
+      - path: nurbsCircle20/Master_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/joint14
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/Ear_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/Ear_joint/Ear_tip_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/L_left_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/L_middle_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/L_right_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/R_left_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/R_middle_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/Neck_joint/Head_joint/R_right_brow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/L_clavis_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/L_clavis_joint/L_shoulder_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/L_clavis_joint/L_shoulder_joint/L_elbow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/L_clavis_joint/L_shoulder_joint/L_elbow_joint/L_paw_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/R_clavis_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/R_clavis_joint/R_shoulder_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/R_clavis_joint/R_shoulder_joint/R_elbow_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Body_joint/R_clavis_joint/R_shoulder_joint/R_elbow_joint/R_paw_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/L_hip_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/L_hip_joint/L_knee_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/L_hip_joint/L_knee_joint/L_foot_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/Tail_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/R_hip_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/R_hip_joint/R_knee_joint
+        weight: 1
+      - path: nurbsCircle20/Master_joint/R_hip_joint/R_knee_joint/R_foot_joint
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: Bear_model
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

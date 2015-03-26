@@ -16,7 +16,7 @@ public class ModifiedStat : BaseStat {
 /// Initializes a new instance of the <see cref="ModifiedStat"/> class.
 /// </summary>
 	public ModifiedStat(){
-		UnityEngine.Debug.Log ("Modified Created");
+		//UnityEngine.Debug.Log ("Modified Created");
 		_mods = new List<ModifyingAttribute> ();
 		_modeValue = 0;
 	}
@@ -99,7 +99,7 @@ public struct ModifyingAttribute {
 	/// <param name="att">Att. the attribute to be used</param>
 	/// <param name="rat">Rat. the ratio to be used</param>
 	public ModifyingAttribute(Attribute att, float rat){
-		UnityEngine.Debug.Log ("Modified Attribute Created");
+//		UnityEngine.Debug.Log ("Modified Attribute Created");
 		attribute = att;
 		ratio = rat;
 	}

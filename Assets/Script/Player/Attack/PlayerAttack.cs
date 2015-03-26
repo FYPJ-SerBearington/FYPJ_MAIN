@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 		attackTimer = 0.0f;
 		coolDown = 2.0f;
 	}

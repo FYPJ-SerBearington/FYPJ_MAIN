@@ -8,7 +8,7 @@ public class Boss_Projectile : MonoBehaviour
 	int Rnum;
 	void Start ()
 	{
-		dir.Set (0, 0, 1);
+		dir.Set (0, 0, -1);
 	}
 	
 	// Update is called once per frame

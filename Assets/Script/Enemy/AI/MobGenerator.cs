@@ -37,7 +37,7 @@ public class MobGenerator : MonoBehaviour {
 
 	//make sure that everything is initialized before we go on to the next step
 	private void _Initialize(){
-		Debug.Log ("Init");
+//		Debug.Log ("Init");
 
 		if (!CheckForMobPrefabs())
 			return;
@@ -49,12 +49,12 @@ public class MobGenerator : MonoBehaviour {
 	}
 	//make sure taht everthing is set up before we continue
 	private void _Setup(){
-		Debug.Log ("SetUp");
+//		Debug.Log ("SetUp");
 		_state = MobGenerator.State.SpawnMob;
 	}
 	//spawn a mob if we have an open spawn point
 	private void _SpawnMob(){
-		Debug.Log ("spawnmob");
+//		Debug.Log ("spawnmob");
 
 		GameObject[] gos = AvailableSpawnPoints ();
 
@@ -94,7 +94,7 @@ public class MobGenerator : MonoBehaviour {
 			//check how many child it has
 			if(spawnPoints[count].transform.childCount == 0)
 			{
-				Debug.Log("spawn point available");
+//				Debug.Log("spawn point available");
 				gos.Add(spawnPoints[count]);
 			}
 		}
