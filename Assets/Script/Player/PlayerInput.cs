@@ -13,51 +13,56 @@ using System.Collections;
 public class PlayerInput : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyUp (KeyCode.C)) {
+			Messenger.Broadcast("ToggleCharacter");
+		}
+		if (Input.GetKeyUp (KeyCode.I)) {
+			Messenger.Broadcast("ToggleInventory");
+		}
 		//Moving forward and backward
-		if (Input.GetButtonDown ("Vertical")) {
-			if(Input.GetAxis("Vertical") > 0){
+		if (Input.GetKeyDown (KeyCode.W)) {
+			//if(Input.GetAxis("Vertical") > 0){
 				SendMessage("MoveMeForward", AdvanceMovement.Forward.forward, SendMessageOptions.RequireReceiver);
 				//Debug.Log(AdvanceMovement.Forward.forward);
-			}
-			else{
+		}
+		else if (Input.GetKeyDown (KeyCode.S)){
 				SendMessage("MoveMeForward", AdvanceMovement.Forward.back, SendMessageOptions.RequireReceiver);
 				//Debug.Log(AdvanceMovement.Forward.back);
-			}
 		}
-		if (Input.GetButtonUp ("Vertical")) {
+
+		//}
+		if (Input.GetKeyUp (KeyCode.W) || Input.GetKeyUp (KeyCode.S)) {
 			SendMessage("MoveMeForward",AdvanceMovement.Forward.none, SendMessageOptions.RequireReceiver);
 		}
 
 		//Rotating player
-		if (Input.GetButtonDown ("Strafe")) {
-			if(Input.GetAxis("Strafe") > 0){
-				SendMessage("RotateMe", AdvanceMovement.Turn.right, SendMessageOptions.RequireReceiver);
+		if (Input.GetKeyDown (KeyCode.E)) {
+			SendMessage("RotateMe", AdvanceMovement.Turn.right, SendMessageOptions.RequireReceiver);
 				//Debug.Log(AdvanceMovement.Forward.forward);
-			}
-			else{
-				SendMessage("RotateMe", AdvanceMovement.Turn.left, SendMessageOptions.RequireReceiver);
-				//Debug.Log(AdvanceMovement.Forward.back);
-			}
 		}
-		if (Input.GetButtonUp ("Strafe")) {
+		else if (Input.GetKeyDown (KeyCode.Q)){
+			SendMessage("RotateMe", AdvanceMovement.Turn.left, SendMessageOptions.RequireReceiver);
+				//Debug.Log(AdvanceMovement.Forward.back);
+		}
+
+		if (Input.GetKeyUp(KeyCode.E) || Input.GetKeyUp(KeyCode.Q)) {
 			SendMessage("RotateMe",AdvanceMovement.Turn.none, SendMessageOptions.RequireReceiver);
 		}
 
 		//Strafe player
-		if (Input.GetButtonDown ("Horizontal")) {
-			if(Input.GetAxis("Horizontal") > 0){
+		if (Input.GetKeyDown (KeyCode.D)) {
 				SendMessage("StrafeMe", AdvanceMovement.Turn.right, SendMessageOptions.RequireReceiver);
 				//Debug.Log(AdvanceMovement.Forward.forward);
 			}
-			else{
+		else if (Input.GetKeyDown (KeyCode.A)){
 				SendMessage("StrafeMe", AdvanceMovement.Turn.left, SendMessageOptions.RequireReceiver);
 				//Debug.Log(AdvanceMovement.Forward.back);
 			}
-		}
-		if (Input.GetButtonUp ("Horizontal")) {
+
+
+		if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) {
 			SendMessage("StrafeMe",AdvanceMovement.Turn.none, SendMessageOptions.RequireReceiver);
 		}
-
 		//Jump
 		if (Input.GetKeyDown(KeyCode.Space)) {
 			//Debug.Log("Jumping");

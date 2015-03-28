@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<DialoguesCollection>
+	<Bosses>
+		<Dialogue by = "boss1">
+			<Sentence>
+				<line>HAHAHA ,i'm going to kill you</line>
+				<line>LOLOLOL, not pain ~</line>
+				<line>FUCK, i'm dying</line>
+			</Sentence>
+		</Dialogue>
+	</Bosses>
+</DialoguesCollection>

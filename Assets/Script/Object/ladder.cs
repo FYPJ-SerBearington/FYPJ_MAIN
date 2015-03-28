@@ -2,12 +2,12 @@
 using System.Collections;
 
 public class ladder : MonoBehaviour {
-	private PlayerController _PC;
+	private PlayerCharacter _PC;
 	public bool inside = false;
 	public Transform OnController;
 	public float heightFactor= 3.2f;
 	void Start(){
-		_PC = GetComponent<PlayerController>();
+		_PC = GetComponent<PlayerCharacter>();
 	}
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.tag == "Player") {

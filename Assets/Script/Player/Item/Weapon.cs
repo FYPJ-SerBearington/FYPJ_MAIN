@@ -36,6 +36,13 @@ public class Weapon : BuffItem {
 		get { return _dmgType; }
 		set{ _dmgType = value; }
 	}
+	public override string ToolTip(){
+		return Name + "\n" +
+			"Value " + Value + "\n" +
+				"Durability " + CurDurabilty + "/" + MaxDurability + "\n" + 
+				MaxDamage * DamageVariance + " - " + MaxDamage;
+		
+	}
 }
 
 public enum DamageType{

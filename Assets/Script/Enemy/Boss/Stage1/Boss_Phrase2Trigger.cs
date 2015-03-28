@@ -11,7 +11,7 @@ public class Boss_Phrase2Trigger : MonoBehaviour
 	}
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.name == "_Player")
+		if (other.name == "_Player" || other.name == "bear model")
 		{
 			GameObject.Find("Boss").GetComponent<Boss_AI>()._phrases = 2;
 			Destroy(this.gameObject);

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
 [RequireComponent(typeof(BoxCollider))]
 [RequireComponent(typeof(AudioSource))]
 public class Chest : MonoBehaviour {
@@ -29,6 +29,10 @@ public class Chest : MonoBehaviour {
 	private Transform _myTransform;
 
 	public bool inUse = false;
+
+	public List<Item> loot = new List<Item>();
+
+	private bool _used = false; 		//track if the chest has been used or not
 	// Use this for initialization
 	void Start () {
 		_myTransform = transform;
@@ -95,20 +99,45 @@ public class Chest : MonoBehaviour {
 	}
 
 	private IEnumerator Open(){
+		//Set this script to be the one that is holding the items
 		myGUI.chest = this;
 
+		//find the player so we can track his distance after openning the chest
 		_player = GameObject.FindGameObjectWithTag("Player");
 
+		//make this chest as being in use
 		inUse = true;
+
+		//play the open anumation
 		_anim.Play ("open");
 
+		//quickly turn on the particle animation
 		particleEffect.SetActive (true);
-		//_audio.PlayOneShot (openSound);
 
+		//play the audio
+		//_audio.PlayOneShot (openSound);
+		if(!_used)
+			PopulateChest (5);
+		//wait until the chest is done opening
 		yield return new WaitForSeconds (_anim["open"].clip.length);
+
+		//change the chest state to open
 		state = Chest.State.open;
-		Messenger<int>.Broadcast("PopulateChest", 5, MessengerMode.DONT_REQUIRE_LISTENER);
+
+		//send a message to the GUI to create 5 items and display them in the loot window
+		Messenger.Broadcast("DisplayLoot");
 	}
+
+	private void PopulateChest(int x){
+		for (int count = 0; count < x; count++) {
+			loot.Add (ItemGenerator.CreateItem());
+
+		}
+
+		_used = true;
+
+	}
+
 	private IEnumerator Close(){
 		_player = null;
 		inUse = false;
@@ -117,6 +146,9 @@ public class Chest : MonoBehaviour {
 		//_audio.PlayOneShot (closeSound);
 		yield return new WaitForSeconds (_anim["close"].clip.length);
 		state = Chest.State.close;
+
+		if (loot.Count == 0)
+			Destroy (gameObject);
 	}
 	public void ForceClose(){
 		Messenger.Broadcast("CloseChest");
