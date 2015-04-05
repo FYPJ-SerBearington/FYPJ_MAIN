@@ -5,7 +5,7 @@ public class Weapon : BuffItem {
 	private int _maxDamage;
 	private float _dmgVar;
 	private float _maxRange;
-	private DamageType _dmgType;
+	private DamageType _dmgType;//public?
 
 	public Weapon(){
 		_maxDamage = 0;

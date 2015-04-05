@@ -12,6 +12,8 @@ public class GameManager:MonoBehaviour
 	public static int legoCount;
 	public static bool bossIsAlive;
 
+	//Player data want to save
+	public static string P_name;
 	// Use this for initialization
 	void Start ()
 	{
@@ -34,7 +36,10 @@ public class GameManager:MonoBehaviour
 		FileStream file = File.Create (Application.persistentDataPath + "/savedData.dt"); //you can call it anything you want
 		Debug.Log(Application.persistentDataPath + "/savedData.dt");
 		GameData data = new GameData();
-		data.currentStage = currentStage;	
+		data.currentStage = currentStage;
+
+		//Player stuff
+		data.P_name = P_name;
 		bf.Serialize(file, data);
 		file.Close();
 	}   
@@ -49,6 +54,8 @@ public class GameManager:MonoBehaviour
 			file.Close();
 			
 			currentStage = data.currentStage;
+
+			P_name = data.P_name;
 		}
 	}
 }
@@ -61,4 +68,6 @@ public class GameData
 	public int armorType;
 	public int legoCount;
 	public bool bossIsAlive;
+
+	public string P_name;
 }

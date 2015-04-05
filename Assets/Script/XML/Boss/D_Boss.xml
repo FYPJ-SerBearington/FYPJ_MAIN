@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<DialoguesCollection>
+	<Bosses>
+		<Dialogue by = "BOSS#1">
+			<Sentence>
+				<line>Welcome to the world of pain</line>
+				<line>i hope you are prepared to feel pain</line>
+				<line>GG</line>
+				<line>happy new year</line>
+				<line>good luck and good bye</line>
+				<line>muhahahahahahaha</line>
+			</Sentence>
+		</Dialogue>
+	</Bosses>
+</DialoguesCollection>

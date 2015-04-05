@@ -28,7 +28,9 @@ public class ModifiedStat : BaseStat {
 	public void AddModifier(ModifyingAttribute mod){
 		_mods.Add (mod);
 	}
-
+	public void ClearModifiers(){
+		_mods.Clear ();
+	}
 	/// <summary>
 	/// Reset _modValue to 0
 	/// check if we atleast one ModfyingAttribute in our list of mods.

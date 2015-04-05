@@ -9,7 +9,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+[AddComponentMenu("Managers/Game Master")]
 public class Targetting : MonoBehaviour {
 	public List<Transform> targets;
 	public Transform selectedTarget;
@@ -20,7 +20,7 @@ public class Targetting : MonoBehaviour {
 		targets = new List<Transform>();
 		selectedTarget = null;
 		myTransform = transform;
-	
+
 		AddAllEnemies ();
 		Debug.Log ("adding all enemies target");
 
@@ -77,7 +77,11 @@ public class Targetting : MonoBehaviour {
 
 		selectedTarget.GetComponent<MobUI> ().DisplayHealth();
 
-		Messenger<bool>.Broadcast("show mob vital bars", true);
+//		PlayerAttack pa = (PlayerAttack)GetComponent ("PlayerAttack");
+
+//		pa.target = selectedTarget.gameObject;
+
+		Messenger<bool>.Broadcast("show mob vital bars", true,MessengerMode.DONT_REQUIRE_LISTENER);
 	}
 	private void DeselectTarget(){
 		selectedTarget.FindChild ("Mob Name").GetComponent<MeshRenderer> ().enabled = false;

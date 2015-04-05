@@ -1,6 +1,17 @@
-﻿using UnityEngine;
+﻿/// <summary>
+/// Camera mouse.cs
+/// 3/10/15
+/// Gibbie Chairul
+/// 
+/// Attach this script to your camera
+/// 
+/// make sure your player character has the Tag: player so the caemra find it
+/// </summary>
+
+using UnityEngine;
 using System.Collections;
 
+[AddComponentMenu("Camera-control/Player's Camera")]
 public class CameraMouse : MonoBehaviour {
 	public Transform target; 							// Target to follow
 	public float targetHeight= 1.7f; 						// Vertical offset adjustment

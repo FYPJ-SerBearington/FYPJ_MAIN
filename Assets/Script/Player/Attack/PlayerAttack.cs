@@ -14,7 +14,7 @@ public class PlayerAttack : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		//Every frame the attackTimer is greater than zero it gets reduce the time that it took to render the frame
 		if (attackTimer > 0)
 			attackTimer -= Time.deltaTime;
@@ -42,14 +42,14 @@ public class PlayerAttack : MonoBehaviour {
 		Vector3 dir = (target.transform.position- transform.position).normalized;
 		//To tell the direction of player to the enemy. 1 is infront of player, -1 is behind. 0 is beside
 		float direction = Vector3.Dot (dir, transform.forward);
-		Debug.Log ("Direction: " + direction);
-		Debug.Log ("Distance:" + distance);
+//		Debug.Log ("Direction: " + direction);
+//		Debug.Log ("Distance:" + distance);
 		if (distance < 2.5f) 
 		{
 			if(direction > 0)
 			{
-//				EnemyHealth eh = (EnemyHealth)target.GetComponent ("EnemyHealth");
-//				eh.AdjustCurrentHealth (-10);
+				EnemyHealth eh = (EnemyHealth)target.GetComponent ("EnemyHealth");
+				eh.AdjustCurrentHealth (-10);
 			}
 		}
 	}

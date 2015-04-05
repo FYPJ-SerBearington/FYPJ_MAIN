@@ -43,7 +43,7 @@ public class Menu_ButtonScript : MonoBehaviour
 				//print (hit.collider.name);
 				if(hit.transform.gameObject.name == "PlayBtn")
 				{
-					Application.LoadLevel(2);
+					Application.LoadLevel(1);
 				}
 				if(hit.transform.gameObject.name == "CreditBtn")
 				{

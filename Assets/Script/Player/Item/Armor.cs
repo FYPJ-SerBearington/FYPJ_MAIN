@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Armor : Clothing {
 	private int _armorLevel; //the armor level of this piece of armor
+
 	public Armor(){
 		_armorLevel = 0;
 	}

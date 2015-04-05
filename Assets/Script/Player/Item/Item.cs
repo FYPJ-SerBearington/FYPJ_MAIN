@@ -17,6 +17,7 @@ public class Item{
 	private int _curDur; //current durability
 	private int _maxDur; //max durability
 	private Texture2D _icon;
+
 	public Item(){
 		_name = "Need Name";
 		_value = 0;
@@ -53,10 +54,11 @@ public class Item{
 		get{ return _curDur; }
 		set{ _curDur = value;}
 	}
-	private Texture2D Icon{
+	public Texture2D Icon{
 		get{return _icon;}
 		set{ _icon = value;}
 	}
+
 	public virtual string ToolTip(){
 		return Name + "\n" +
 			"Value " + Value + "\n" +

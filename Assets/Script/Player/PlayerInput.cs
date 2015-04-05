@@ -4,12 +4,23 @@
 /// 3/25/2015
 /// 
 /// This script that's going to capture all the player inputs
+/// 
+/// keys
+/// Toggle Inventory				-Open and close the inventory window - I
+/// Toggle Character Window 		-Opend and close the character information window - C
+/// Move Forward					-to move the character move side or backwards - W/S
+/// Rotate Player					-to have the character move die to side - Q/E
+/// strafe							-to have the character move side to side = A/D
+/// jump							- Button to use to make the character jump - SPACE
+/// Run								- Toggle to use to have the character run or walk - SHIFT
 /// </summary>
 
 using UnityEngine;
 using System.Collections;
 
+[AddComponentMenu("Player/All Player Scripts")]
 [RequireComponent(typeof(AdvanceMovement))]
+[RequireComponent(typeof(PlayerCharacter))]
 public class PlayerInput : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {

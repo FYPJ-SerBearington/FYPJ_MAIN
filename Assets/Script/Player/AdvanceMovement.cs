@@ -49,6 +49,13 @@ public class AdvanceMovement : MonoBehaviour
 		none = 0,
 		forward = 1
 	}
+	public string walkAnimName;
+	public string runAnimName;
+	public string jumpAnimName;
+	public string idleAnimName;
+	public string strafeAnimName;
+	public string fallAnimName;
+
 	public float walkSpeed = 0.5f;			//the speed our character walks at
 	public float runMultiplier = 2; 	//how fast the player can run
 	public float rotateSpeed = 250;		//the rotation of our player
@@ -122,10 +129,11 @@ public class AdvanceMovement : MonoBehaviour
 		
 		_anim.Stop ();
 		_anim.wrapMode = WrapMode.Loop;
-		_anim ["jump"].layer = 1; // more weight to use for jump animation. The heigher the layer the more weight used for that animation compare to the one that's lower that it.  
-		_anim ["jump"].wrapMode = WrapMode.Once; //we do not want to jump animation in the air to be looping
-
-		//_anim.Play ("Idle");				//start the idle animation when the script starts
+		if(jumpAnimName != ""){
+			_anim [jumpAnimName].layer = -1; // more weight to use for jump animation. The heigher the layer the more weight used for that animation compare to the one that's lower that it.  
+			_anim [jumpAnimName].wrapMode = WrapMode.Once; //we do not want to jump animation in the air to be looping
+		}
+//		_anim.Play (idleAnimName);				//start the idle animation when the script starts
 
 		//initializing our AdvanceMovement to none which is idle
 		_turn = AdvanceMovement.Turn.none;
@@ -170,21 +178,28 @@ public class AdvanceMovement : MonoBehaviour
 			else if(_strafe != AdvanceMovement.Turn.none)
 			{
 				Strafe();
-			}else
+			}
+
+			else
 			{
 				Idle();															//idle animation
 			}
+
+
 			if(_jump)
 			{
+				Debug.Log ("Jump Animation");
 				//If player are actually falling for any amount of time we don't want the person to be able to "double" jump in mid air. This will stop that
 				if(airTime < jumpTime)
 				{											//if we have not already been in the air too long
 					_moveDirection.y += jumpHeight;   							//move them upwards
 					Jump();														//jump animation
-					_jump = false;
+
 				}
+				_jump = false;
 			}
-		}else
+		}
+		else
 		{
 			//if we have a collisionFlag and it is CollideBelow
 			if((_collisionFlags & CollisionFlags.CollidedBelow) == 0)
@@ -225,40 +240,57 @@ public class AdvanceMovement : MonoBehaviour
 	public void JumpMe()
 	{
 		_jump = true;
-		Debug.Log("Jumping");
+		//Debug.Log("Jumping");
 	}
 /**     
  * Below is alist of all the animations that every charater in the game can perform along with any parameters needed for them to work right
  **/
 	public void Idle()
 	{
-		//_anim.CrossFade("idle");
+		if(idleAnimName == "")
+			return;
+		//_anim.CrossFade(idleAnimName);
 	}
 	public void Walk()
 	{
+		if(walkAnimName == "")
+			return;
 		//_anim["walk"].speed = 1.5f;
-		_anim.CrossFade("walk");
+		_anim.CrossFade(walkAnimName);
+		Debug.Log ("Walking Animation");
 	}
 	public void Strafe()
 	{
-		_anim.CrossFade("strafe");
+		if(strafeAnimName == "")
+			return;
+		//_anim.CrossFade(strafeAnimName);
 	}
 	public void Run()
 	{
-		_anim["run"].speed = 3.5f;
-		_anim.CrossFade("run");
+		if(runAnimName == "")
+			return;
+		_anim[runAnimName].speed = 3.5f;
+		_anim.CrossFade(runAnimName);
+		//Debug.Log ("Run Animation");
 	}
 	public void Jump()
 	{
-		_anim["jump"].speed = 2.0f;
-		_anim.CrossFade("jump");
+		if(jumpAnimName == "")
+			return;
+		_anim[jumpAnimName].speed = 1.0f;
+		_anim.CrossFade(jumpAnimName);
+
 	}
 	public void Fall()
 	{
-		//_anim.CrossFade("Fall");
+		if(fallAnimName == "")
+			return;
+		//_anim.CrossFade(fallAnimName);
 	}
 	public void Rotate(){
-		_anim["strafe"].speed = 5.5f;
-		_anim.CrossFade("strafe");
+		if(strafeAnimName == "")
+			return;
+		_anim[strafeAnimName].speed = 5.5f;
+		_anim.CrossFade(strafeAnimName);
 	}
 }

@@ -1,20 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+[AddComponentMenu("Game/Object/Chest")]
 [RequireComponent(typeof(BoxCollider))]
 [RequireComponent(typeof(AudioSource))]
 public class Chest : MonoBehaviour {
 
 	private Animation _anim;						//Animations components
-	private AudioSource _audio;
+//	private AudioSource _audio;
 
 	public enum State{
 		open,
 		close,
 		inbetween
 	}
-	public AudioClip openSound;
-	public AudioClip closeSound;				//sound to play when the chest is being closed
+	public string openAnimName;
+	public string closeAnimName;
+	//public AudioClip openSound;
+	//public AudioClip closeSound;				//sound to play when the chest is being closed
 
 	public GameObject particleEffect;			//link to a particle effect for when the chest is open
 
@@ -32,15 +35,18 @@ public class Chest : MonoBehaviour {
 
 	public List<Item> loot = new List<Item>();
 
+	public static float defaultLifeTime = 10;
+	private float _lifeTimer = 0;
+
 	private bool _used = false; 		//track if the chest has been used or not
 	// Use this for initialization
 	void Start () {
 		_myTransform = transform;
 		_anim = GetComponent<Animation>();
-		_audio = GetComponent<AudioSource> ();
+//		_audio = GetComponent<AudioSource> ();
 		state = Chest.State.close;
 
-		particleEffect.SetActive (false);
+		//particleEffect.SetActive (false);
 		_defaultColours = new Color[parts.Length];
 
 		if (parts.Length > 0)
@@ -49,6 +55,11 @@ public class Chest : MonoBehaviour {
 	}
 
 	void Update(){
+		_lifeTimer += Time.deltaTime;
+		//will destory chest if not loot within life time.
+		if(_lifeTimer > defaultLifeTime && state == Chest.State.close){
+			DestroyChest();
+		}
 		if(!inUse)
 			return;
 
@@ -109,10 +120,10 @@ public class Chest : MonoBehaviour {
 		inUse = true;
 
 		//play the open anumation
-		_anim.Play ("open");
+		_anim.Play (openAnimName);
 
 		//quickly turn on the particle animation
-		particleEffect.SetActive (true);
+		//particleEffect.SetActive (true);
 
 		//play the audio
 		//_audio.PlayOneShot (openSound);
@@ -141,14 +152,26 @@ public class Chest : MonoBehaviour {
 	private IEnumerator Close(){
 		_player = null;
 		inUse = false;
-		_anim.Play ("close");
-		particleEffect.SetActive (false);
+		_anim.Play (closeAnimName);
+
+		if(particleEffect != null)
+			particleEffect.SetActive(false);
+		//particleEffect.SetActive (false);
 		//_audio.PlayOneShot (closeSound);
-		yield return new WaitForSeconds (_anim["close"].clip.length);
+
+		//	float tempTimer = _anim[closeAnimName].length;
+		//if(closeSound != null)
+//		if(closeSound.length > tempTimer)
+//			tempTimer = closeSound.length;
+		yield return new WaitForSeconds (_anim[closeAnimName].length);
 		state = Chest.State.close;
 
 		if (loot.Count == 0)
-			Destroy (gameObject);
+			DestroyChest();
+	}
+	private void DestroyChest(){
+		loot = null;
+		Destroy(gameObject);
 	}
 	public void ForceClose(){
 		Messenger.Broadcast("CloseChest");
@@ -160,13 +183,15 @@ public class Chest : MonoBehaviour {
 		if (glow) {
 			if (parts.Length > 0)
 				for (int count = 0; count <_defaultColours.Length; count++)
-					parts [count].GetComponent<Renderer> ().material.SetColor ("_Color", Color.white);
+					for(int matCount = 0; matCount < parts [count].GetComponent<Renderer> ().materials.Length; matCount++)
+						parts [count].GetComponent<Renderer> ().materials[matCount].SetColor ("_Color", Color.white);
 
 		} 
 		else {
 			if (parts.Length > 0)
 				for (int count = 0; count <_defaultColours.Length; count++)
-					parts [count].GetComponent<Renderer> ().material.SetColor ("_Color",_defaultColours[count]);
+					for(int matCount = 0; matCount < parts [count].GetComponent<Renderer> ().materials.Length; matCount++)
+						parts [count].GetComponent<Renderer> ().materials[matCount].SetColor ("_Color", _defaultColours[count]);
 
 		}
 	}

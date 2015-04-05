@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;  //use for enum
+
 public class CharacterGenerator : MonoBehaviour {
-	private PlayerCharacter _toon;
+//	private PlayerCharacter _toon;
 	private const int _STARTING_POINTS = 350;
 	private const int _MIN_STARTING_ATTRIBUTE_VALUE = 10;
 	private const int _STARTING_VALUE = 50;
@@ -18,30 +19,28 @@ public class CharacterGenerator : MonoBehaviour {
 	private const int _BUTTON_HEIGHT = 20;// the height of the buttons
 	
 	public GUISkin mySkin;
+	
 
-	public GameObject playerPrefab;
-
+	public float delayTimer = 0.25f;
+	public float _lastClick = 0;
 	private const int _statStartingPos = 40; // the start position of the stats
+	void Awake(){
+		//PlayerCharacter.Instance.Awake ();
+	}
 	// Use this for initialization
 	void Start () {
-		GameObject pc = Instantiate (playerPrefab, Vector3.zero,Quaternion.identity) as GameObject;
-		pc.name = "_ _Sir Bearingthon";
-
-//		_toon = new PlayerCharacter();
-//		_toon.Awake ();
-
-		_toon = pc.GetComponent<PlayerCharacter>();
+		Debug.Log ("Start Character Generation");
 		_pointsLeft = _STARTING_POINTS;
 
 		for(int count = 0; count < Enum.GetValues(typeof(AttributeName)).Length; count++)
 		{
 			//Taking all of our base attributes and sign starting value
-			_toon.GetPrimaryAttribute(count).BaseValue = _STARTING_VALUE; 
-			Debug.Log("Base Value"+ count+ " " + _pointsLeft);
+			PlayerCharacter.Instance.GetPrimaryAttribute(count).BaseValue = _STARTING_VALUE;
+//			Debug.Log("Base Value"+ count+ " " + _pointsLeft);
 			_pointsLeft -= ( _STARTING_VALUE - _MIN_STARTING_ATTRIBUTE_VALUE ); 
-			Debug.Log(_pointsLeft);
+//			Debug.Log(_pointsLeft);
 		}
-		_toon.StatUpdate ();
+		PlayerCharacter.Instance.StatUpdate ();
 	}
 	
 	// Update is called once per frame
@@ -49,13 +48,13 @@ public class CharacterGenerator : MonoBehaviour {
 	}
 
 	void OnGUI(){
-
+		Debug.Log ("Displays stuffs");
 		DisplayName ();
 		DisplayPointsLeft();
 		DisplayAttributes ();
 		DisplayVitals ();
 		DisplaySkills ();
-		if(_toon.CName == "" || _pointsLeft >0)
+		if(PlayerCharacter.Instance.CName == "" || _pointsLeft >0)
 			DisplayCreateLabel ();
 		else
 		DisplayCreateButton ();
@@ -64,7 +63,8 @@ public class CharacterGenerator : MonoBehaviour {
 	private void DisplayName(){
 		GUI.Label (new Rect(10,10,50,25), "Name:");
 		//Player Enter
-		_toon.CName = GUI.TextField(new Rect(65,10, 100, 25),_toon.CName);
+		PlayerCharacter.Instance.CName = GUI.TextField(new Rect(65,10, 100, 25),PlayerCharacter.Instance.CName);
+
 	}
 	private void DisplayPointsLeft(){
 		GUI.Label (new Rect(250,10,100,25), "Points Left: " + _pointsLeft.ToString());
@@ -84,7 +84,7 @@ public class CharacterGenerator : MonoBehaviour {
 			                   _statStartingPos + (count * _LINE_HEIGHT),	//y
 			                   _BASEVALUE_LABEL_WIDTH,						//width
 			                   _LINE_HEIGHT									//height
-			                   ), _toon.GetPrimaryAttribute(count).AdjustedBaseValue.ToString());
+			                   ), PlayerCharacter.Instance.GetPrimaryAttribute(count).AdjustedBaseValue.ToString());
 
 			if(GUI.RepeatButton(new Rect(_OFFSET + _STAT_LABEL_WIDTH + _BASEVALUE_LABEL_WIDTH, 	// x
 			                       _statStartingPos + (count * _BUTTON_HEIGHT),				// y
@@ -92,12 +92,16 @@ public class CharacterGenerator : MonoBehaviour {
 			                       _BUTTON_HEIGHT											//height
 			                       ),"-"))
 			{
-				if(_toon.GetPrimaryAttribute(count).BaseValue > _MIN_STARTING_ATTRIBUTE_VALUE)
-				{
-					_toon.GetPrimaryAttribute(count).BaseValue--;
-					_pointsLeft++;
-					_toon.StatUpdate ();
+				if(Time.time - _lastClick > delayTimer){
+					if(PlayerCharacter.Instance.GetPrimaryAttribute(count).BaseValue > _MIN_STARTING_ATTRIBUTE_VALUE)
+					{
+						PlayerCharacter.Instance.GetPrimaryAttribute(count).BaseValue--;
+						_pointsLeft++;
+						PlayerCharacter.Instance.StatUpdate ();
+					}
+					_lastClick = Time.time;
 				}
+
 			}
 			if(GUI.RepeatButton(new Rect(_OFFSET + _STAT_LABEL_WIDTH + _BASEVALUE_LABEL_WIDTH + _BUTTON_WIDTH //x
 			                       ,_statStartingPos + (count * _BUTTON_HEIGHT),						//y
@@ -105,12 +109,16 @@ public class CharacterGenerator : MonoBehaviour {
 			                       _BUTTON_HEIGHT														//height
 			                       ),"+") == true)
 			{
-				if(_pointsLeft > 0)
-				{
-					_toon.GetPrimaryAttribute(count).BaseValue++;
-					_pointsLeft--;
-					_toon.StatUpdate ();
+				if(Time.time - _lastClick > delayTimer){
+					if(_pointsLeft > 0)
+					{
+						PlayerCharacter.Instance.GetPrimaryAttribute(count).BaseValue++;
+						_pointsLeft--;
+						PlayerCharacter.Instance.StatUpdate ();
+					}
+					_lastClick = Time.time;
 				}
+
 			}
 		}
 	}
@@ -127,7 +135,7 @@ public class CharacterGenerator : MonoBehaviour {
 			                   _statStartingPos + ((count + 7) * _LINE_HEIGHT),			//y
 			                   _BASEVALUE_LABEL_WIDTH,									//width
 			                   _LINE_HEIGHT												//height
-			                   ), _toon.GetVital(count).AdjustedBaseValue.ToString());
+			                   ),PlayerCharacter.Instance.GetVital(count).AdjustedBaseValue.ToString());
 		}
 
 	}
@@ -143,7 +151,7 @@ public class CharacterGenerator : MonoBehaviour {
 			                   _statStartingPos + (count * _LINE_HEIGHT),																	//y
 			                   _BASEVALUE_LABEL_WIDTH,																						//width
 			                   _LINE_HEIGHT																									//height
-			                   ), _toon.GetSkill(count).AdjustedBaseValue.ToString());
+			                   ), PlayerCharacter.Instance.GetSkill(count).AdjustedBaseValue.ToString());
 		}
 	}
 	private void DisplayCreateLabel (){
@@ -158,23 +166,31 @@ public class CharacterGenerator : MonoBehaviour {
 		                    _statStartingPos + ((10)*_LINE_HEIGHT),
 							100,
 							_LINE_HEIGHT
-		                       ),"Create")
+		                       ),"Next")
 		   )
 		{
 
-			GameSettings gsScript = GameObject.FindGameObjectWithTag("Tag_GameSettings").GetComponent<GameSettings>();
+//			GameSettings gsScript = GameObject.FindGameObjectWithTag("Tag_GameSettings").GetComponent<GameSettings>();
 
 			//Change the cur value of the vitals to the max modified of that vital
 			UpdateCurVitalValues();
-			gsScript.SaveCharacterData();
+			//gsScript.SaveCharacterData();
+			//GameSetting2 = PlayerCharacter.Instance;
+			GameSetting2.SaveName( PlayerCharacter.Instance.CName);
+			GameSetting2.SaveAttributes( PlayerCharacter.Instance.primaryAttribute);
+			GameSetting2.SaveVitals(PlayerCharacter.Instance.vital);
+			GameSetting2.SaveSkills(PlayerCharacter.Instance.skill);
 
-			Application.LoadLevel("game");
+			//GameManager.P_name = PlayerCharacter.Instance.CName;
+			//Attribute[] temp = GameSetting2.LoadAttributes();
+
+			Application.LoadLevel(GameSetting2.levelNames[3]);
 		}
 	}
 	private void UpdateCurVitalValues(){
 		for (int count = 0; count < Enum.GetValues(typeof(VitalName)).Length; count++) {
 			//Let's get the vital get the cur val assign it to adjusted base value
-			_toon.GetVital(count).CurValue = _toon.GetVital(count).AdjustedBaseValue;
+			PlayerCharacter.Instance.GetVital(count).CurValue = PlayerCharacter.Instance.GetVital(count).AdjustedBaseValue;
 		}
 	}
 }

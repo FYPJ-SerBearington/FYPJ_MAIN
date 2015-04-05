@@ -28,8 +28,8 @@ public class Attribute : BaseStat {
 /// </summary>
 //Define numeration
 public enum AttributeName {
-	Strength,
-	Agility,
-	Vitality,
-	Intelligence
+	Strength = 0,
+	Agility = 1,
+	Vitality = 2,
+	Intelligence = 3
 }

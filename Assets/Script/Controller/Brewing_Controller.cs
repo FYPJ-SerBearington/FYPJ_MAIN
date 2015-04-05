@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Brewing_Controller : MonoBehaviour
 {
-	Text feedback;
+	public Text feedback;
 	public int chances;
 	public int result;
 	public bool Active;
@@ -19,7 +19,6 @@ public class Brewing_Controller : MonoBehaviour
 		Active = true;
 		canspawn = true;
 		start = true;
-		feedback = GameObject.Find("Canvas").GetComponentInChildren<Text>();
 	}
 	void showResult()
 	{

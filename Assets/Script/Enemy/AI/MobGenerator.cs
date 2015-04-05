@@ -1,6 +1,16 @@
-﻿using UnityEngine;
+﻿/// <summary>
+/// Mob generator.cs
+///	3/17/2015
+/// Gibbie Chairul
+///
+/// This class is respnsible for making sure that there is a mob for each spawn point. Create an GameObjext called Spawn point
+/// </summary>
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+
+[AddComponentMenu("Managers/Mob")]
 public class MobGenerator : MonoBehaviour {
 	public enum State{
 		Idle,
@@ -11,7 +21,7 @@ public class MobGenerator : MonoBehaviour {
 	public GameObject[] mobPrefabs; //An array to hold all of the prefabs of mobs we want to spawn
 	public GameObject[] spawnPoints; //This array will hold a reference to all of the spawnpoints of the scene
 
-	public State _state; //this our local variable that holds our current state
+	private State _state; //this our local variable that holds our current state
 	void Awake(){
 		_state = MobGenerator.State.Initialize;
 	}

@@ -3,24 +3,29 @@ using System.Collections;
 using System;					//Added to access enum class
 
 public class BaseCharacter : MonoBehaviour {
+	public GameObject mainMount;
+	public GameObject offHandMount;
+	public GameObject headMount;
+	public GameObject torsoMount;
+
 	private string _cname;
 	private int _level;
 	private uint _freeExp; //Unsigned int
 
-	private Attribute[] _primaryAttribute;
-	private Vital[] _vital;
-	private Skill[] _skill;
+	public Attribute[] primaryAttribute;
+	public Vital[] vital;
+	public Skill[] skill;
 
 	//Default
-	public void Awake(){
+	public virtual void Awake(){
 		//Debug.Log("Base Character Awake");
 		_cname = string.Empty;
 		_level = 0;
 		_freeExp = 0;
 
-		_primaryAttribute = new Attribute[Enum.GetValues(typeof(AttributeName)).Length];
-		_vital = new Vital[Enum.GetValues(typeof(VitalName)).Length];
-		_skill = new Skill[Enum.GetValues(typeof(SkillName)).Length];
+		primaryAttribute = new Attribute[Enum.GetValues(typeof(AttributeName)).Length];
+		vital = new Vital[Enum.GetValues(typeof(VitalName)).Length];
+		skill = new Skill[Enum.GetValues(typeof(SkillName)).Length];
 
 		SetupPrimaryAttributes ();
 		SetupVitals ();
@@ -50,38 +55,47 @@ public class BaseCharacter : MonoBehaviour {
 
 	}
 	private void SetupPrimaryAttributes(){
-		for(int count = 0; count <_primaryAttribute.Length; count++)
+		for(int count = 0; count <primaryAttribute.Length; count++)
 		{
-			_primaryAttribute[count] = new Attribute();
-			_primaryAttribute[count].Name = ((AttributeName)count).ToString();
+			primaryAttribute[count] = new Attribute();
+			primaryAttribute[count].Name = ((AttributeName)count).ToString();
 		}
 	}
 	private void SetupVitals(){
-		for(int count = 0; count <_vital.Length; count++)
+		for(int count = 0; count <vital.Length; count++)
 		{
-			_vital[count] = new Vital();
+			vital[count] = new Vital();
 		}
 
 		SetupVitalModifiers ();
 	}
 	private void SetupSkills(){
-		for(int count = 0; count <_skill.Length; count++)
+		for(int count = 0; count <skill.Length; count++)
 		{
-			_skill[count] = new Skill();
+			skill[count] = new Skill();
 		}
 		SetupSkillModifiers ();
 	}
 
 	public Attribute GetPrimaryAttribute(int index){
-		return _primaryAttribute[index];
+		return primaryAttribute[index];
 	}
 	public Vital GetVital(int index){
-		return _vital[index];
+		return vital[index];
 	}
 	public Skill GetSkill(int index){
-		return _skill[index];
+		return skill[index];
 	}
+	public void ClearModifers(){
+		for (int count = 0; count < vital.Length; count++)
+			vital [count].ClearModifiers ();
 
+		for (int count = 0; count < skill.Length; count++)
+			skill [count].ClearModifiers ();
+
+		SetupVitalModifiers ();
+		SetupSkillModifiers ();
+	}
 	private void SetupVitalModifiers(){
 		//Health
 //		ModifyingAttribute health = new ModifyingAttribute ();
@@ -117,13 +131,13 @@ public class BaseCharacter : MonoBehaviour {
 	}
 	//Update all of our modified stat real time
 	public void StatUpdate(){
-		for (int count = 0; count < _vital.Length; count++) 
+		for (int count = 0; count < vital.Length; count++) 
 		{
-			_vital[count].Update();
+			vital[count].Update();
 		}
-		for (int count = 0; count < _skill.Length; count++) 
+		for (int count = 0; count < skill.Length; count++) 
 		{
-			_skill[count].Update();
+			skill[count].Update();
 		}
 
 	}
