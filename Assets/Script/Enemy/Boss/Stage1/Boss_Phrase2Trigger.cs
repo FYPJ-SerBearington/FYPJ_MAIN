@@ -11,7 +11,7 @@ public class Boss_Phrase2Trigger : MonoBehaviour
 	}
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.name == "_Player" || other.name == "bear model" ||other.name == "_ _Ser Bearington")
+		if (other.name == "ShieldBase")
 		{
 			trigger = true;
 		}
