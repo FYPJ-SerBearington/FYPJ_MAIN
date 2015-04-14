@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<PlayerDataCollection>
+	<Data>
+		<Health>100</Health>
+		<PositionX>0</PositionX>
+		<PositionY>0</PositionY>
+		<PositionZ>0</PositionZ>
+		<WeaponTier>0</WeaponTier>
+		<ShieldTier>0</ShieldTier>
+	</Data>
+</PlayerDataCollection>

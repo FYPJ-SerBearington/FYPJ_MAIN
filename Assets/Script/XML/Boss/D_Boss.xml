@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-<DialoguesCollection>
+<BossDialoguesCollection>
 	<Bosses>
 		<Dialogue by = "BOSS#1">
-			<Sentence>
-				<line>Welcome to the world of pain</line>
-				<line>i hope you are prepared to feel pain</line>
-				<line>GG</line>
-				<line>happy new year</line>
-				<line>good luck and good bye</line>
-				<line>muhahahahahahaha</line>
-			</Sentence>
+			<AliveSentences>
+				<a_line>Welcome teddy !</a_line>
+				<a_line>I hope you are prepared !</a_line>
+				<a_line>Prepared what you ask eh ~</a_line>
+				<a_line>PREPARE TO DIE YOU MORON !</a_line>
+				<a_line>WAHAHAHAHAHAHAHA</a_line>
+				<a_line>BYE.</a_line>
+			</AliveSentences>
+			<DeadSentences>
+				<d_line>argh!</d_line>
+				<d_line>i will be backkkkkk</d_line>
+			</DeadSentences>
 		</Dialogue>
+		
 	</Bosses>
-</DialoguesCollection>
+</BossDialoguesCollection>

@@ -10,17 +10,17 @@ public class ToyBookTrigger : MonoBehaviour
 	}
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.name == "_Player" || other.name == "bear model"||other.name == "_ _Ser Bearington")
+		Debug.Log(other.gameObject.name);
+		if (other.gameObject.name == "ShieldBase")
 		{
+			Debug.Log("in");
 			//play book floating and opening animation
 			GameObject.Find("bookstem").GetComponent<ToyBookController>().Activated= true;
-			GameObject.Find("DialogueCanvas").GetComponent<Boss_DialogueManager>().startDialogue();
-			//Debug.Log("in");
 		}
 	}
 	void OnTriggerExit(Collider other)
 	{
-		if (other.name == "_Player" || other.name == "bear model"||other.name == "_ _Ser Bearington")
+		if (other.gameObject.name == "ShieldBase")
 		{
 			//play book floating and opening animation
 			GameObject.Find("bookstem").GetComponent<ToyBookController>().Activated = false;

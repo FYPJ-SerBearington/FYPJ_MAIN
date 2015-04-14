@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 <DialoguesCollection>
-	<Bosses>
-		<Dialogue by = "boss1">
+	<Npcs>
+		<Dialogue by = "Chibby The Cute Witch">
 			<Sentence>
-				<line>Welcome to the world of pain</line>
-				<line>i hope you are prepared to feel pain</line>
-				<line>GG</line>
-				<line>happy new year</line>
-				<line>good luck and good bye</line>
-				<line>muhahahahahahaha</line>
+				<line>welcome my cute teddy~</line>
 			</Sentence>
 		</Dialogue>
-	</Bosses>
+		<Dialogue by = "Funny Worms">
+			<Sentence>
+				<line>hello *giggles*</line>.
+				<line>do you want to upgrade your item?</line>
+			</Sentence>
+		</Dialogue>
+	</Npcs>
 </DialoguesCollection>

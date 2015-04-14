@@ -20,15 +20,13 @@ public class Boss_AI : MonoBehaviour
 	}
 	enum Movement
 	{
-		UP,
-		DOWN,
 		LEFT,
 		RIGHT,
 		TELEPORT,
 		REST
 	}
 	//
-	public int _phrases;
+	public int _phrases = 0;
 	//
 	private States _bossMainState;
 	private Attacks _bossAttackState;
@@ -57,11 +55,15 @@ public class Boss_AI : MonoBehaviour
 	private int Rnum2;
 	private Vector3[] _ballpos;
 	// Use this for initialization
+	void Awake()
+	{
+		GameObject.Find("BossDialogueCanvas").GetComponent<Boss_DialogueManager>().startDialogue();
+	}
 	void Start ()
 	{
 		_phrases = 1;
 		_bossMainState = States.MOVING;
-		_bossAttackState = Attacks.NONE;
+		_bossAttackState = Attacks.DROPPING;
 		_bossMovementState = Movement.REST;
 		canMove = false;
 		_Timer = 0;
@@ -79,13 +81,11 @@ public class Boss_AI : MonoBehaviour
 		{
 			if(other.tag == "Tag_B1_rwall")
 			{
-				this.gameObject.GetComponent<Renderer>().material.color = Color.red;
 				_bossMovementState = Movement.RIGHT;
 				_bossMainState = States.MOVING;
 			}
 			if(other.tag == "Tag_B1_lwall")
 			{
-				this.gameObject.GetComponent<Renderer>().material.color = Color.red;
 				_bossMovementState = Movement.LEFT;
 				_bossMainState = States.MOVING;
 			}
@@ -107,48 +107,50 @@ public class Boss_AI : MonoBehaviour
 	}
 	void ChangeState()
 	{
+		//main state
 		switch(_bossMainState)
 		{
 			case States.IDLE:
 			{
 				if(_Timer>=3)
 				{
-					_bossMainState = States.ATTACKING;
-					_bossAttackState = Attacks.THROWING;
-					_Timer = 0;
+					if(_phrases == 1)
+					{
+						_Timer = 0;
+					}
+					if(_phrases == 2)
+					{
+						_bossMainState = States.ATTACKING;
+						_Timer = 0;
+					}
 				}
 			}break;
 			case States.MOVING:
 			{
 				if(_phrases == 1 && canMove == false)
 				{
-					_bossMainState = States.MOVING;
 					_bossMovementState = Movement.LEFT;
 					canMove = true;
 				}
 				if(_phrases == 2)
 				{
-					_bossMainState = States.MOVING;
 					_bossMovementState = Movement.TELEPORT;
 				}
 			}break;
 			case States.ATTACKING:
 			{
-				if(_phrases == 1)
+				if(_Timer>=3)
 				{
-					if(_Timer>=3)
+					if(_phrases == 1)
 					{
-						_bossMainState = States.ATTACKING;
 						_bossAttackState = Attacks.DROPPING;
 						_Timer = 0;
 					}
-				}
-				if(_phrases == 2)
-				{
-					//if very near use smacking
-					//else use throwing
-					_bossMainState = States.ATTACKING;
-					_bossAttackState = Attacks.THROWING;
+					if(_phrases == 2)
+					{
+						_bossAttackState = Attacks.THROWING;
+						_Timer = 0;
+					}
 				}
 			}break;
 			case States.STUNNED:
@@ -163,23 +165,15 @@ public class Boss_AI : MonoBehaviour
 		//main state is moving
 		if(_bossMainState == States.MOVING)
 		{
+			//movement state
 			switch(_bossMovementState)
 			{
-				case Movement.UP:
-				{
-					
-				}break;
-				case Movement.DOWN:
-				{
-					
-				}break;
 				case Movement.LEFT:
 				{
 					//
 					if(_Timer>=3)
 					{
 						_bossMainState = States.ATTACKING;
-						_bossAttackState = Attacks.DROPPING;
 						_Timer = 0;
 					}
 				}break;
@@ -189,25 +183,31 @@ public class Boss_AI : MonoBehaviour
 					if(_Timer>=3)
 					{
 						_bossMainState = States.ATTACKING;
-						_bossAttackState = Attacks.DROPPING;
 						_Timer = 0;
 					}
 				}break;
 				case Movement.TELEPORT:
 				{
-					if(_phrases == 2)
+					if(_Timer>=3)
 					{
-						if(_Timer>=3)
+						//_bossMainState = States.ATTACKING;
+						if(_phrases == 1)
 						{
+							//_bossMovementState = Movement.REST;
 							_bossMainState = States.ATTACKING;
-							_bossAttackState = Attacks.THROWING;
+							_Timer = 0;
+						}
+						if(_phrases == 2)
+						{
+							_bossMovementState = Movement.REST;
+							_bossMainState = States.ATTACKING;
 							_Timer = 0;
 						}
 					}
 				}break;
 				case Movement.REST:
 				{
-
+					
 				}break;
 			}
 		}
@@ -217,22 +217,30 @@ public class Boss_AI : MonoBehaviour
 			{
 				case Attacks.NONE:
 				{
-					
+					//_bossAttackState = Attacks.THROWING;
 				}break;
 				case Attacks.DROPPING:
 				{
-					//_bossMainState = States.MOVING;
 					if(_dropCounter >=1)
 					{
-						_bossMainState = States.MOVING;
-						_dropCounter = 0;
+						if(_phrases == 1)
+						{
+							_bossMainState = States.MOVING;
+							_dropCounter = 0;
+						}
+						if(_phrases == 2)
+						{
+							_bossMainState = States.IDLE;
+							_bossAttackState = Attacks.THROWING;
+							_dropCounter = 0;
+						}
 					}
 				}break;
 				case Attacks.THROWING:
 				{
 					if(_dropCounter >=1)
 					{
-						_bossMainState = States.IDLE;
+						_bossAttackState = Attacks.NONE;
 						_dropCounter = 0;
 					}
 				}break;
@@ -257,11 +265,13 @@ public class Boss_AI : MonoBehaviour
 			}break;
 			case States.MOVING:
 			{
-				
+				//
 			}break;
 			case States.ATTACKING:
 			{
-				
+//				if()
+//				{
+//				}
 			}break;
 			case States.STUNNED:
 			{
@@ -279,14 +289,6 @@ public class Boss_AI : MonoBehaviour
 		{
 			switch(_bossMovementState)
 			{
-				case Movement.UP:
-				{
-					
-				}break;
-				case Movement.DOWN:
-				{
-					
-				}break;
 				case Movement.LEFT:
 				{
 					this.transform.Translate(0,0,-Time.deltaTime);
@@ -311,7 +313,7 @@ public class Boss_AI : MonoBehaviour
 			{
 				case Attacks.NONE:
 				{
-					
+					_dropCounter = 0;
 				}break;
 				case Attacks.DROPPING:
 				{
@@ -340,7 +342,7 @@ public class Boss_AI : MonoBehaviour
 				}break;
 				case Attacks.SMACKING:
 				{
-					
+					//do meleee
 				}break;
 			}
 		}
@@ -384,16 +386,6 @@ public class Boss_AI : MonoBehaviour
 		//movement update
 		switch(_bossMovementState)
 		{
-			case Movement.UP:
-			{
-				ChangeState();
-				Respond();
-			}break;
-			case Movement.DOWN:
-			{
-				ChangeState();
-				Respond();
-			}break;
 			case Movement.LEFT:
 			{
 				ChangeState();

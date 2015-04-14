@@ -1,0 +1,186 @@
+fileFormatVersion: 2
+guid: 442e6456678a6714ca73fd8b40b932c4
+timeCreated: 1428980266
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Chest_joint
+    100004: Chin_joint
+    100006: enemy_boss1
+    100008: head_end_joint
+    100010: head_joint
+    100012: L_bottom_lid_joint
+    100014: L_cheek_joint
+    100016: L_clavis_joint
+    100018: L_elbow_joint
+    100020: L_eye_joint
+    100022: L_index_end_joint
+    100024: L_index_joint
+    100026: L_left_lid_joint
+    100028: L_middle_end_joint
+    100030: L_middle_joint
+    100032: L_middle_lid_joint
+    100034: L_pinkie_end_joint
+    100036: L_pinkie_joint
+    100038: L_right_lid_joint
+    100040: L_shoulder_joint
+    100042: L_thumb_end
+    100044: L_thumb_joint
+    100046: L_wrist_joint
+    100048: master_control
+    100050: master_joint
+    100052: neck_1_joint
+    100054: neck_2_joint
+    100056: Noes_joint
+    100058: R_bottom_lid_joint
+    100060: R_cheek_joint
+    100062: R_clavis_joint
+    100064: R_elbow_joint
+    100066: R_eye_joint
+    100068: R_index_end_joint
+    100070: R_index_joint
+    100072: R_left_lid_joint
+    100074: R_middle_end_joint
+    100076: R_middle_joint
+    100078: R_middle_lid_joint
+    100080: R_pinkie_end_joint
+    100082: R_pinkie_joint
+    100084: R_right_lid_joint
+    100086: R_shoulder_joint
+    100088: R_thumb_end
+    100090: R_thumb_joint
+    100092: R_wrist_joint
+    100094: Stomach_joint
+    100096: Tail_1_joint
+    100098: Tail_2_joint
+    100100: Tail_3_joint
+    100102: Tail_4_joint
+    100104: Tail_end_joint
+    100106: Tongue_1_joint
+    100108: Tongue_2_joint
+    100110: Tongue_3_joint
+    100112: Tongue_4_joint
+    100114: transform1
+    100116: Upper_body_joint
+    400000: //RootNode
+    400002: Chest_joint
+    400004: Chin_joint
+    400006: enemy_boss1
+    400008: head_end_joint
+    400010: head_joint
+    400012: L_bottom_lid_joint
+    400014: L_cheek_joint
+    400016: L_clavis_joint
+    400018: L_elbow_joint
+    400020: L_eye_joint
+    400022: L_index_end_joint
+    400024: L_index_joint
+    400026: L_left_lid_joint
+    400028: L_middle_end_joint
+    400030: L_middle_joint
+    400032: L_middle_lid_joint
+    400034: L_pinkie_end_joint
+    400036: L_pinkie_joint
+    400038: L_right_lid_joint
+    400040: L_shoulder_joint
+    400042: L_thumb_end
+    400044: L_thumb_joint
+    400046: L_wrist_joint
+    400048: master_control
+    400050: master_joint
+    400052: neck_1_joint
+    400054: neck_2_joint
+    400056: Noes_joint
+    400058: R_bottom_lid_joint
+    400060: R_cheek_joint
+    400062: R_clavis_joint
+    400064: R_elbow_joint
+    400066: R_eye_joint
+    400068: R_index_end_joint
+    400070: R_index_joint
+    400072: R_left_lid_joint
+    400074: R_middle_end_joint
+    400076: R_middle_joint
+    400078: R_middle_lid_joint
+    400080: R_pinkie_end_joint
+    400082: R_pinkie_joint
+    400084: R_right_lid_joint
+    400086: R_shoulder_joint
+    400088: R_thumb_end
+    400090: R_thumb_joint
+    400092: R_wrist_joint
+    400094: Stomach_joint
+    400096: Tail_1_joint
+    400098: Tail_2_joint
+    400100: Tail_3_joint
+    400102: Tail_4_joint
+    400104: Tail_end_joint
+    400106: Tongue_1_joint
+    400108: Tongue_2_joint
+    400110: Tongue_3_joint
+    400112: Tongue_4_joint
+    400114: transform1
+    400116: Upper_body_joint
+    4300000: enemy_boss1
+    9500000: //RootNode
+    13700000: enemy_boss1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

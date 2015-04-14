@@ -14,11 +14,12 @@ public class Object_Platform : MonoBehaviour
 	public int Cstate;
 	public float t;
 	public float min,max;
+	public float movevalue = 1;
 	// Use this for initialization
 	void Start ()
 	{
 		min = this.transform.position.x;
-		max = this.transform.position.x + 3.0f;
+		max = this.transform.position.x + movevalue;
 		t = 0;
 		checker = 0;
 		Cstate = (int)checker;
